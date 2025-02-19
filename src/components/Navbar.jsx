@@ -10,7 +10,6 @@ function Navbar() {
   return (
     <Box bg={bg} px={4}>
       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-        {/* <Box>MyApp</Box> */}
         <Link to="/"><Button variant="ghost">Home</Button></Link>
         <Flex alignItems={'center'}>
           

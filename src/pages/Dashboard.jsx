@@ -1,52 +1,3 @@
-// import React from 'react';
-// import { useSelector } from 'react-redux';
-// import { Box } from '@chakra-ui/react';
-// import { Bar } from 'react-chartjs-2';
-// import {
-//   Chart as ChartJS,
-//   CategoryScale,
-//   LinearScale,
-//   BarElement,
-//   Title,
-//   Tooltip,
-//   Legend,
-// } from 'chart.js';
-
-// import Counter from '../components/Counter';
-
-// // Register Chart.js components
-// ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
-
-// function Dashboard() {
-//   const userData = useSelector((state) => state.user.userData);
-
-//   const data = {
-//     labels: Object.keys(userData),
-//     datasets: [
-//       {
-//         label: 'User Data',
-//         data: Object.values(userData).map((value) => (typeof value === 'string' ? value.length : 0)),
-//         backgroundColor: 'rgba(75, 192, 192, 0.2)',
-//         borderColor: 'rgba(75, 192, 192, 1)',
-//         borderWidth: 1,
-//       },
-//     ],
-//   };
-
-//   return (
-//     <Box p={5}>
-      
-      
-     
-//       <Counter/>
-//       <Bar data={data} />
-//     </Box>
-//   );
-// }
-
-// export default Dashboard;
-
-
 import React, { useEffect, useState } from "react";
 import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
 import { Bar, Pie } from "react-chartjs-2";
@@ -63,7 +14,7 @@ import {
 } from "chart.js";
 import Counter from "../components/Counter";
 
-// Register Chart.js components
+// Registering Chart.js components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement);
 
 function Dashboard() {
@@ -137,22 +88,23 @@ function Dashboard() {
         Counter
       </Heading>
 
-      {/* Counter Component */}
+      
       <Counter />
 
       <Heading size="md" mt={8} mb={6}>
         User Dashboard
       </Heading>
+
       {/* Compact Grid Layout */}
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8} mt={4}>
-        <Box maxW="600px">
+        <Box maxW="600px" p={4}>
           <Heading size="sm" mb={2}>
             Field Data Lengths:
           </Heading>
           <Bar data={barData} options={barOptions} height={220} />
         </Box>
 
-        <Box maxW="450px">
+        <Box maxW="450px" p={4}>
           <Heading size="sm" mb={2}>
             User Data Contribution:
           </Heading>
